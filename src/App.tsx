@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import Backdrop from "./components/Backdrop";
+import Error from "./components/Error";
 import EventList from "./components/EventList";
 import Header from "./components/Header";
 import Loading from "./components/Loading";
@@ -29,7 +30,6 @@ export const Container = styled.main`
 function App() {
   const [activeDrawer, setActiveDrawer] = useState<boolean>(false);
   const [eventList, setEventList] = useState<IEvent[]>([]);
-  const [betList, setBetList] = useState([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -57,14 +57,14 @@ function App() {
     fetchEvents();
   }, []);
 
-  // if (error) return <p>{error}</p>;
+  if (error) return <Error />;
 
   return (
     <GlobalStorage>
       <Header handleClick={handleActiveDrawer} />
       {activeDrawer && <Backdrop handleClick={handleBackdropClick} />}
       {loading && <Loading />}
-      {betList && (
+      {eventList && (
         <>
           <SideDrawer show={activeDrawer} eventList={eventList} />
           <Container>
