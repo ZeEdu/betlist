@@ -45,7 +45,7 @@ function App() {
     async function fetchEvents() {
       setLoading(true);
       setError(null);
-      fetch("http://www.mocky.io/v2/59f08692310000b4130e9f71")
+      fetch("https://www.mocky.io/v2/59f08692310000b4130e9f71")
         .then((res) => res.json())
         .then((json: ResponseType) => setEventList([...json]))
         .catch((err) => {
