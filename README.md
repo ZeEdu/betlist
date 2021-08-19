@@ -13,7 +13,7 @@ Aplicação baseada no desafio para entrevistas proposto pela Addison Global. Ma
 
 ## Projeto Online
 
-Este [link](https://weather-challenge-three.vercel.app/) leva pra uma versão do app hospedado na Vercel.
+Este [link](https://betlist.vercel.app/) leva pra uma versão do app hospedado na Vercel.
 
 ## Instalando e Rodando
 
