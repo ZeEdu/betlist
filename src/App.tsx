@@ -48,7 +48,7 @@ function App() {
         .then((res) => res.json())
         .then((json: ResponseType) => setEventList([...json]))
         .catch((err) => {
-          console.error(err);
+          // console.error(err);
           setError("Something Went Wrong");
         })
         .finally(() => setLoading(false));

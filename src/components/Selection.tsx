@@ -16,8 +16,10 @@ const Wrapper = styled.div<WrapperTypes>`
   padding: 0.25rem 1rem;
   border-radius: 0.5rem;
   /* flex-wrap: wrap; */
+  transition: 0.3s;
   &:hover {
     cursor: pointer;
+    background: #ff7c7c;
   }
   &:first-child {
     /* padding-left: 8px; */

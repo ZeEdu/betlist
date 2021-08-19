@@ -11,6 +11,7 @@ const Title = styled.h2`
   padding: 0.5rem;
   padding-top: 1rem;
   ${TitleMixin}
+  text-align: center;
 `;
 
 const SelectionWrapper = styled.div`

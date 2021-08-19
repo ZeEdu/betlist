@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const Wrapper = styled.nav`
   width: 100%;
-  box-shadow: 0px 2px 0px rgba(17, 17, 26, 0.1);
+  /* box-shadow: 0px 2px 0px rgba(17, 17, 26, 0.1); */
 `;
 const Menu = styled.div`
   width: 2rem;
@@ -21,7 +21,12 @@ const Menu = styled.div`
 `;
 const MenuWrapper = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+`;
+
+const StyledMenuTitle = styled.h1`
+  font-weight: bold;
+  font-size: 1.375rem;
 `;
 
 interface Props {
@@ -33,6 +38,7 @@ const Header: FC<Props> = ({ handleClick }) => {
     <Wrapper>
       <Container>
         <MenuWrapper>
+          <StyledMenuTitle>BetApp</StyledMenuTitle>
           <Menu onClick={handleClick}>
             <MenuSVG />
           </Menu>
