@@ -13,7 +13,7 @@ type DrawerProps = {
 
 const Drawer = styled.div<DrawerProps>`
   height: 100%;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  /* box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); */
   position: fixed;
   top: 0;
   left: 0;
@@ -22,6 +22,10 @@ const Drawer = styled.div<DrawerProps>`
   z-index: 400;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
+  background: rgba(10, 11, 14, 0.25);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: 0 10px 10px 0;
   ${({ open }) =>
     open &&
     css`
