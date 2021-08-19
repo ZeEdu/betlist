@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Backdrop from "./components/Backdrop";
 import EventList from "./components/EventList";
 import Header from "./components/Header";
+import Loading from "./components/Loading";
 import SideDrawer from "./components/SideDrawer";
 import { GlobalStorage } from "./Context";
 import { IEvent } from "./interfaces/IEvent";
@@ -57,16 +58,20 @@ function App() {
   }, []);
 
   // if (error) return <p>{error}</p>;
-  // if (loading) return <p>Carregando...</p>;
 
   return (
     <GlobalStorage>
       <Header handleClick={handleActiveDrawer} />
       {activeDrawer && <Backdrop handleClick={handleBackdropClick} />}
-      <SideDrawer show={activeDrawer} eventList={eventList} />
-      <Container>
-        <EventList events={eventList} />
-      </Container>
+      {loading && <Loading />}
+      {betList && (
+        <>
+          <SideDrawer show={activeDrawer} eventList={eventList} />
+          <Container>
+            <EventList events={eventList} />
+          </Container>
+        </>
+      )}
     </GlobalStorage>
   );
 }
